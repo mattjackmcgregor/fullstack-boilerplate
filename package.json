@@ -1,0 +1,38 @@
+{
+  "name": "fullstack-boilerplate",
+  "version": "0.1.0",
+  "description": "boilerplate for fullstack development",
+  "main": "server/index.js",
+  "repository": "https://github.com/mattjackmcgregor/fullstack-boilerplate.git",
+  "scripts": {
+    "start": "webpack && node server",
+    "dev": "nodemon server --watch server --ignore server/public &yarn build --watch",
+    "build": "webpack --config client/webpack.config.js",
+    "knex": "knex"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
+  },
+  "author": "MattJackMcgregor",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "knex": "^0.14.6",
+    "sqlite3": "^4.0.1",
+    "superagent": "^3.8.3"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-react": "^6.24.1",
+    "nodemon": "^1.17.5",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-router-dom": "^4.3.1",
+    "webpack": "^3.12"
+  }
+}
