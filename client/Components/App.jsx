@@ -1,15 +1,14 @@
 import React from 'react'
+import Main from './Main'
 
 class App extends React.Component {
-  constructor (props) {
-    super(props)
-    this.state = {
-
-    }
-  }
   render () {
     return (
-      <h1>fullstack BoilerPlate</h1>
+      <div>
+        hi hi
+        <Main />
+
+      </div>
     )
   }
 }

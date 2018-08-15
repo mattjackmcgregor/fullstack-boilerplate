@@ -3,38 +3,37 @@ const config = require(path.join(__dirname, '../../knexfile')).development
 const knex = require('knex')(config)
 
 module.exports = {
-  getAll,
-  getOne,
-  updateOne,
-  addNew,
-  deleteOne
+  allBrands,
+  getBrand,
+  newBrand,
+  editBrand,
+  deleteBrand
 }
 
-function getAll (testDb) {
-  const db = testDb || knex
-  return db('shoes').select()
+function allBrands () {
+  const db = knex
+  return db('brand').select()
 }
 
-function getOne (id, testDb) {
-  const db = testDb || knex
-  return db('shoes')
+function getBrand (id) {
+  const db = knex
+  return db('brand')
     .where('id', id).select()
 }
 
-function updateOne (post, testDb) {
-  const db = testDb || knex
-  return db('shoes')
-    .where('id', post.id)
-    .update(post)
+function newBrand (brand) {
+  const db = knex
+  return db('brand').insert(brand)
 }
 
-function addNew (shoes, testDb) {
-  const db = testDb || knex
-  return db('shoes').insert(shoes)
+function editBrand (brand) {
+  const db = knex
+  return db('brand')
+    .where('id', brand.id).update(brand)
 }
 
-function deleteOne (id, testDb) {
-  const db = testDb || knex
-  return db('shoes')
+function deleteBrand (id) {
+  const db = knex
+  return db('brand')
     .where('id', id).del()
 }
